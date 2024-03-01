@@ -5,8 +5,6 @@ openai_client = OpenAI()
 def speech_to_text(audio_binary):
     base_url = "https://sn-watson-stt.labs.skills.network"
     api_url = base_url+'/speech-to-text/api/v1/recognize'
-
-    # Set up parameters for our HTTP reqeust
     params = {
         'model': 'en-US_Multimedia',
     }
@@ -27,7 +25,6 @@ def speech_to_text(audio_binary):
 
 
 def text_to_speech(text, voice=""):
-    # Set up Watson Text to Speech HTTP Api url
     base_url = "https://sn-watson-tts.labs.skills.network"
     api_url = base_url + '/text-to-speech/api/v1/synthesize?output=output_text.wav'
 
@@ -52,7 +49,6 @@ def text_to_speech(text, voice=""):
     return response.content
 
 def openai_process_message(user_message):
-    # Set the prompt for OpenAI Api
     instruction = "Act like a personal assistant. You can respond to questions, translate sentences, summarize news, and give recommendations. "
     messages = [{"role": "system", "content": instruction},
              {"role": "user", "content": user_message}]
