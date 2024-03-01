@@ -2,9 +2,7 @@ from openai import OpenAI
 import requests
 
 openai_client = OpenAI()
-
 def speech_to_text(audio_binary):
-
     # Set up Watson Speech to Text HTTP Api url
     base_url = "https://sn-watson-stt.labs.skills.network"
     api_url = base_url+'/speech-to-text/api/v1/recognize'
